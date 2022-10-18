@@ -1,0 +1,21 @@
+---
+const { title, img, desc, url_code, url_live, badge, tags, target = '_blank' } = Astro.props;
+---
+
+<div class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]">  
+    <div class="hero-content flex-col md:flex-row">
+      <img src={img} alt={title} class="max-w-full md:max-w-[13rem] rounded-lg" />
+      <div class="grow w-full">
+        <h1 class="text-xl font-bold">
+          {title}
+          {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
+        </h1>
+        <p class="py-1 text-1xl">{desc}</p>
+        <div class="card-actions justify-end">
+          {url_live && <a href={url_live} class="btn btn-outline btn-xs" target={target}>Visitar</a>}
+          {url_code && <a href={url_code} class="btn btn-outline btn-xs" target={target}>Código fuente</a>}
+        </div>
+      </div>
+    </div>
+ 
+</div>
