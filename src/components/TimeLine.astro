@@ -1,0 +1,16 @@
+---
+const { title, subtitle, desc, badge } = Astro.props;
+---
+
+
+<div class="flex">
+    <div class="time__line">
+      <span class="w-4 h-4 bg-primary block rounded-full mt-1"></span>
+      <span class="education__line bg-primary block h-full w-[2px] translate-x-[7px]"></span>
+    </div>
+    <div class="info__data bd-grid px-5">
+      <h3 class="flex items-center mb-1 text-lg font-semibold">{title}{badge && <span class="bg-gray-300 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3">{badge}</span>}</h3>
+      <time class="block mb-2 text-sm font-normal leading-none text-gray-400">{subtitle}</time>
+      <p class="mb-4 text-base font-normal text-gray-500">{desc}</p>
+    </div>
+</div> 

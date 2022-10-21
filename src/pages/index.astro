@@ -4,7 +4,7 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 ---
 
 <Layout>
-  <div class="pb-12 mt-5">
+  <div class="pb-12 mt-5">   
     <div class="text-xl py-1">Hola 👋 Soy Brian!</div>
     
     <div class="text-3xl py-3 font-bold">Backend web developer</div>
@@ -27,15 +27,33 @@ import HorizontalCard from "../components/HorizontalCard.astro";
     </div>    
   </div>
   <div>
-    <div class="text-3xl w-full font-bold mb-2">Mis proyectos {"</>"}</div>
+    <div class="text-3xl w-full font-bold mb-2">Algunos de mis proyectos {"</>"}</div>
   </div>
   <HorizontalCard
-      title="Demo Project 1"
-      img="/test.png"
-      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      url_code="#"
+      title="Sitio web de comercio electrónico"
+      img="/Hostal-Manuel-Enrique.webp"
+      desc="Sitio web de promoción y gestión de reservas de un Hostal, desarrollada en Python-Django. Integrada pasarela de pagos de Enzona."
+      url_code=""
+      url_live="https://www.hostalmanuelenrique.cu"
+      badge="Website"
+    />
+    <div class="divider my-0"></div>
+    <HorizontalCard
+      title="Sitio web de comercio electrónico"
+      img="/Clima-I&G.webp"
+      desc="Plataforma de comercio electrónico de la Mipyme Clima I&G, desarrollada en Python-Django. Integrada pasarela de pagos de Enzona."
+      url_code=""
+      url_live="https://www.climaig.cu"
+      badge="Website"
+    />
+    <div class="divider my-0"></div>
+    <HorizontalCard
+      title="Sistema de Gestión y Monitoreo de estudios diagnósticos del SARS-CoV-2."
+      img="/pcr-app.webp"
+      desc="El sistema desarrollado en Python/Django, protocoliza y automatiza el flujo de trabajo desde la toma de muestra hasta la notificación de resultado a las instituciones de Salud. Lo complementa un bot de Telegram para la consulta de resultados por la población."
+      url_code=""
       url_live=""
-      badge=""
+      badge="Web Application"
     />
 
 </Layout>
