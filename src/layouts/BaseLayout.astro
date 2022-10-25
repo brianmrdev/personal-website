@@ -4,9 +4,9 @@ import Footer from "../components/Footer.astro";
 import Sidebar from "../components/Sidebar.astro";
 import Navbar from "../components/Navbar.astro";
 
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import { SITE_TITLE, SITE_DESCRIPTION, URL_BASE } from "../config";
 
-const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
+const { image, title = SITE_TITLE, description = SITE_DESCRIPTION, url = URL_BASE } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -29,7 +29,7 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.prop
       themeChange();
       // 👆 you could import the CDN directly instead of these two lines
     </script>
-    <Header title={title} description={description} image={image} />
+    <Header title={title} description={description} image={image} url={url}/>
   </head>
   <body>
     <div class="bg-base-100 drawer drawer-mobile">
