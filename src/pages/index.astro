@@ -1,59 +1,47 @@
 ---
 import Layout from "../layouts/BaseLayout.astro";
-import HorizontalCard from "../components/HorizontalCard.astro";
+
 ---
 
 <Layout>
   <div class="pb-12 mt-5">   
-    <div class="text-xl py-1">👋 Mi nombre es Brian!</div>
-    
-    <div class="text-3xl py-3 font-bold">Backend web developer</div>
+    <div class="text-xl py-1">Hola 👋</div>
+    <div class="text-3xl font-bold">Soy Brian, Desarrollador Web Full Stack</div>
     <div class="py-2">
       <text class="text-lg">
-        Soy Desarrollador Web Backend con Python, creo aplicaciones web utilizando frameworks como Django, FastAPI y Flask. De vez en cuando desarrollo también en el Frontend.
+        Soy un apasionado de la tecnología y el diseño, y mi misión es convertir ideas en experiencias digitales impactantes.
       </text>
     </div>
+    <div class="py-2">
+      <text class="text-lg">
+        Construyo aplicaciones web robustas y eficientes que se adaptan perfectamente a las necesidades únicas de mis clientes. Además, mi dominio en Wordpress me permite crear sitios web dinámicos y atractivos, desde blogs hasta tiendas en línea, estoy capacitado para llevar cualquier visión al mundo digital con estilo y profesionalismo.
+      </text>
+    </div>
+    <div class="py-2">
+      <text class="text-lg">
+        Desde el desarrollo inicial hasta el despliegue en servidores, ya sea en hosting compartido o en un entorno VPS personalizado, te acompaño en cada paso del camino.
+      </text>
+    </div>
+    <div class="py-2">
+      <text class="text-lg">
+        ¿Estás listo para llevar tu presencia en línea al siguiente nivel? ¡Entonces es hora de explorar mi portafolio y comenzar a dar vida a tus ideas! No dudes en ponerte en contacto conmigo para discutir tu proyecto y obtener una cotización personalizada. Estoy aquí para convertir tus sueños digitales en realidad.
+      </text>
+    </div>
+    
     <div class="mt-8">
-      <a class="btn" href="https://t.me/brianmrdev" target="_blank">
-        Conectémonos!</a
+      <a class="btn" 
+      href="https://t.me/brianmrdev"
+      target="_blank">
+        Escríbeme!</a
       >
       <a
-        href="mailto:brianmr1128@gmail.com"
-        target="_blank"
+        href="/portafolio"
         class="btn btn-outline ml-5"
       >
-        Escríbeme</a
+        Portafolio</a
       >
     </div>    
   </div>
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">Algunos de mis proyectos {"</>"}</div>
-  </div>
-  <HorizontalCard
-      title="Sitio web de comercio electrónico"
-      img="/Hostal-Manuel-Enrique.webp"
-      desc="Sitio web de promoción y gestión de reservas de un Hostal, desarrollada en Python-Django. Integrada pasarela de pagos de Enzona."
-      url_code=""
-      url_live="https://www.hostalmanuelenrique.cu"
-      badge="Website"
-    />
-    <div class="divider my-0"></div>
-    <HorizontalCard
-      title="Sitio web de comercio electrónico"
-      img="/Clima-I&G.webp"
-      desc="Plataforma de comercio electrónico de la Mipyme Clima I&G, desarrollada en Python-Django. Integrada pasarela de pagos de Enzona."
-      url_code=""
-      url_live="https://www.climaig.cu"
-      badge="Website"
-    />
-    <div class="divider my-0"></div>
-    <HorizontalCard
-      title="Sistema de Gestión y Monitoreo de estudios diagnósticos del SARS-CoV-2."
-      img="/pcr-app.webp"
-      desc="El sistema desarrollado en Python/Django, protocoliza y automatiza el flujo de trabajo desde la toma de muestra hasta la notificación de resultado a las instituciones de Salud. Lo complementa un bot de Telegram para la consulta de resultados por la población."
-      url_code=""
-      url_live=""
-      badge="Web Application"
-    />
+  
 
 </Layout>
