@@ -1,0 +1,16 @@
+---
+interface Props {
+	date: string;
+	title: string;
+	description: string;
+}
+
+const { date, title, description } = Astro.props;
+---
+
+<a class="block p-6 mt-5 border border-gray-600 rounded-lg shadow hover:bg-gray-800 bg-gray-900 transition duration-300">
+	<h5 class="mb-2 text-2xl font-bold tracking-tight text-blue-500">{date}</h5>
+	<h5 class="mb-2 text-2xl font-bold tracking-tight text-white">{title}</h5>
+	<p class="font-normal text-gray-400">{description}</p>
+</a>
+

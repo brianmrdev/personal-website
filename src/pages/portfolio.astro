@@ -1,0 +1,53 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const projects = await getCollection("projects");
+---
+
+<Layout
+  title="Portafolio de Brian Martínez | Proyectos de Desarrollo Web"
+  ,
+  description="Explora el portafolio de Brian Martínez, que incluye proyectos destacados en desarrollo web full stack, aplicaciones personalizadas y soluciones digitales a medida."
+>
+  <main class="container mx-auto">
+    <section id="portfolio" class="pt-20 py-10">
+      <div class="flex justify-center">
+        <h2
+          class="text-4xl sm:text-5xl leading-tight font-medium mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-teal-400 text-center"
+        >
+          Portafolio de Proyectos
+        </h2>
+      </div>
+      <p class="text-center mb-5 max-w-3xl mx-auto">
+        Descubre algunos de mis proyectos recientes, creados para brindar
+        soluciones innovadoras y optimizadas. Cada trabajo refleja mi compromiso
+        con la calidad y el uso de tecnologías modernas.
+      </p>
+
+      <div class="container mx-auto max-w-6xl py-6 px-4">
+        {
+          projects.map((project) => {
+            const { data } = project;
+            const { title, description, image, tags, github, link } = data;
+
+            return (
+              <ProjectCard
+                title={title}
+                description={description}
+                image={{
+                  src: image.src,
+                  alt: image.alt,
+                }}
+                tags={tags}
+                github={github}
+                link={link}
+              />
+            );
+          })
+        }
+      </div>
+    </section>
+  </main>
+</Layout>

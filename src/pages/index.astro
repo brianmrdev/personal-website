@@ -1,0 +1,243 @@
+---
+import Skill from "../components/Skill.astro";
+import PythonIcon from "../components/icons/Python.astro";
+import DjangoIcon from "../components/icons/Django.astro";
+import FastAPIIcon from "../components/icons/FastAPI.astro";
+import JavaScriptIcon from "../components/icons/JavaScript.astro";
+import AstroIcon from "../components/icons/AstroWeb.astro";
+import VueIcon from "../components/icons/Vuejs.astro";
+import BootstrapIcon from "../components/icons/Bootstrap.astro";
+import TailwindIcon from "../components/icons/Tailwindcss.astro";
+import WordpressIcon from "../components/icons/Wordpress.astro";
+import GitIcon from "../components/icons/Git.astro";
+import DockerIcon from "../components/icons/Docker.astro";
+import KubernetesIcon from "../components/icons/Kubernetes.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import ClockIcon from "../components/icons/Clock.astro";
+import ServiceIcon from "../components/icons/Service.astro";
+import DownloadIcon from "../components/icons/Download.astro";
+import SocialLink from "../components/SocialLink.astro";
+import GithubIcon from "../components/icons/Github.astro";
+import TelegramIcon from "../components/icons/Telegram.astro";
+import LinkedinIcon from "../components/icons/Linkedin.astro";
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import Experience from "../components/Experience.astro";
+
+const services = await getCollection("services");
+---
+
+<Layout
+  title="Brian Martínez | Desarrollador Web Full Stack"
+  ,
+  description="Bienvenido al sitio web de Brian Martínez, desarrollador web full stack especializado en la creación de soluciones digitales innovadoras y eficientes."
+>
+  <main class="container mx-auto">
+    <section id="about" class="py-12 bg-base-200 min-h-screen">
+      <div
+        class="container mx-auto max-w-6xl px-4 flex flex-col lg:flex-row items-center lg:items-start"
+      >
+        <div class="lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0">
+          <h2 class="text-4xl font-medium mb-2">Hola 👋 soy Brian</h2>
+          <h3
+            class="text-6xl font-medium mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-teal-400"
+          >
+            Desarrollador Web Full Stack
+          </h3>
+          <p class="text-xl mb-5">
+            Soy un desarrollador apasionado por crear soluciones web eficientes
+            y escalables. Tengo experiencia en tecnologías como JavaScript y
+            Python, entre otras. Mi objetivo es ayudar a empresas y
+            emprendedores a llevar sus ideas al mundo digital a través de
+            soluciones robustas y personalizadas.
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row items-center sm:space-x-5 space-y-4 sm:space-y-0"
+          >
+            <a
+              href=""
+              class="text-lg font-normal btn btn-outline text-blue-400 hover:bg-blue-400 hover:border-blue-400 rounded-3xl inline-flex items-center justify-center py-3 px-5 flex-nowrap"
+            >
+              Download CV
+              <DownloadIcon class="size-6 ml-2" />
+            </a>
+
+            <div class="flex space-x-4">
+              <SocialLink
+                href="https://github.com/brianmrdev/"
+                target="_blank"
+                rel="noopener"
+              >
+                <GithubIcon class="size-6" />
+              </SocialLink>
+
+              <SocialLink
+                href="https://t.me/brianmrdev"
+                target="_blank"
+                rel="noopener"
+              >
+                <TelegramIcon class="size-6" />
+              </SocialLink>
+
+              <SocialLink
+                href="https://www.linkedin.com/in/brianmrdev"
+                target="_blank"
+                rel="noopener"
+              >
+                <LinkedinIcon class="size-6" />
+              </SocialLink>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:w-1/2 flex justify-center lg:justify-end hero-image-box">
+          <img
+            src="brian-martinez-rodriguez.jpeg"
+            alt="Brian Martinez"
+            class="w-4/5 rotate-3 object-cover rounded-3xl border-2 border-solid border-blue-400 p-0.5 border-opacity-60 transition-all duration-300 hover:border-opacity-100 hover:rotate-0 transform"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="pt-20 py-10">
+      <h2
+        class="text-4xl sm:text-5xl font-medium mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-teal-400 flex items-center justify-center"
+      >
+        <ServiceIcon class="inline-block me-2 text-blue-400" />
+        Mis Servicios
+      </h2>
+
+      <p class="text-center mb-5 max-w-3xl mx-auto">
+        Ofrezco soluciones de desarrollo web full stack, optimizadas y adaptadas
+        a tus necesidades, utilizando tecnologías modernas para proyectos
+        eficientes y escalables.
+      </p>
+
+      <div class="container mx-auto max-w-6xl py-6 px-4 space-y-6">
+        {
+          services.map((service) => {
+            const { data } = service;
+            const { title, description, number } = data;
+
+            return (
+              <div class="flex items-center justify-between border-b border-gray-600 pb-4">
+                <span class="text-2xl font-semibold text-blue-400">
+                  {number}
+                </span>
+                <div class="flex-grow mx-4">
+                  <h3 class="text-xl font-medium">{title}</h3>
+                  <p class="text-gray-400">{description}</p>
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+    </section>
+
+    <section id="experience" class="pt-20 py-10 bg-base-200">
+      <h2
+        class="text-4xl sm:text-5xl font-medium mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-teal-400 flex items-center justify-center"
+      >
+        <ClockIcon class="inline-block me-2 text-blue-400" />
+        Mi Experiencia
+      </h2>
+
+      <p class="text-center mb-5 max-w-3xl mx-auto">
+        He trabajado en proyectos de desarrollo web y administración de
+        sistemas, adquiriendo habilidades en tecnologías modernas y soluciones
+        escalables adaptadas a cada cliente.
+      </p>
+      <div class="container mx-auto max-w-6xl py-6 px-4 space-y-6">
+        <Experience />
+      </div>
+    </section>
+
+    <section id="skill" class="pt-20 py-10">
+      <h2
+        class="text-4xl sm:text-5xl font-medium mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-teal-400 flex items-center justify-center"
+      >
+        <CodeIcon class="inline-block me-2 text-blue-400" />
+        Mis Skill
+      </h2>
+      <p class="text-center mb-5 max-w-3xl mx-auto">
+        Amplia experiencia en tecnologías y herramientas modernas para crear
+        soluciones eficientes y escalables.
+      </p>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 max-w-6xl mx-auto px-4 py-6"
+      >
+        <Skill title="Python">
+          <PythonIcon class="text-blue-500 mx-auto mb-4" />
+        </Skill>
+        <Skill title="Django">
+          <DjangoIcon class="text-blue-500 mx-auto mb-4" />
+        </Skill>
+        <Skill title="FastAPI">
+          <FastAPIIcon class="text-blue-500 mx-auto mb-4" />
+        </Skill>
+        <Skill title="JavaScript">
+          <JavaScriptIcon class="text-blue-500 mx-auto mb-4" />
+        </Skill>
+        <Skill title="Astro">
+          <AstroIcon class="text-blue-500 mx-auto mb-4" />
+        </Skill>
+        <Skill title="Vue.js">
+          <VueIcon class="text-blue-500 mx-auto mb-4" />
+        </Skill>
+        <Skill title="Bootstrap">
+          <BootstrapIcon class="text-blue-500 mx-auto mb-4" />
+        </Skill>
+        <Skill title="Tailwind CSS">
+          <TailwindIcon class="text-blue-500 mx-auto mb-4" />
+        </Skill>
+        <Skill title="Wordpress">
+          <WordpressIcon class="text-blue-500 mx-auto mb-4" />
+        </Skill>
+        <Skill title="Git">
+          <GitIcon class="text-blue-500 mx-auto mb-4" />
+        </Skill>
+        <Skill title="Docker">
+          <DockerIcon class="text-blue-500 mx-auto mb-4" />
+        </Skill>
+        <Skill title="Kubernetes">
+          <KubernetesIcon class="text-blue-500 mx-auto mb-4" />
+        </Skill>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+  .hero-image-box {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-image-box::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: #60a5fa;
+    background: -o-linear-gradient(
+      190deg,
+      #60a5fa 0%,
+      rgba(115, 67, 210, 0) 100%
+    );
+    background: linear-gradient(260deg, #60a5fa 0%, rgba(115, 67, 210, 0) 100%);
+    -webkit-filter: blur(150px);
+    filter: blur(150px);
+    margin-left: 15%;
+    margin-bottom: -5%;
+  }
+</style>

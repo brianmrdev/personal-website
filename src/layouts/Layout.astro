@@ -1,0 +1,43 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Navbar from "../components/Navbar.astro";
+import { ClientRouter } from "astro:transitions";
+import { URL_BASE, IMAGE, IMG_ALT } from "../config";
+
+const {
+  title,
+  description,
+  url = URL_BASE,
+  image = IMAGE,
+  img_alt = IMG_ALT,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <Header
+      title={title}
+      description={description}
+      image={image}
+      url={url}
+      img_alt={img_alt}
+    />
+    <ClientRouter />
+  </head>
+  <body>
+    <div>
+      <Navbar />
+      <slot />
+      <Footer />
+    </div>
+  </body>
+</html>
+<style>
+  div {
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+  }
+</style>

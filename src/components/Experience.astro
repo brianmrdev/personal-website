@@ -1,0 +1,32 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "2023 - Presente",
+    title: "Desarrollador Web Full Stack | Freelancer",
+    description: "Diseñé y desarrollé sitios de comercio electrónico en WordPress y Django, integrando múltiples pasarelas de pago para transacciones seguras. Además, creé aplicaciones web personalizadas para clientes con funcionalidades específicas a sus necesidades. Utilicé tanto Bootstrap como Tailwind CSS para lograr interfaces adaptativas y atractivas, y optimicé cada proyecto para SEO, mejorando la visibilidad en motores de búsqueda.",
+    isCurrent: true
+  },
+  {
+    date: "Octubre 2017 - Enero 2023",
+    title: "Administrador de Infraestructura de TI",
+    description: "Administré entornos de Kubernetes en la nube, incluyendo la configuración de balanceadores de carga con HAProxy para optimizar la distribución del tráfico. Implementé servicios de recolección y monitoreo de trazas utilizando Grafana y Grafana Loki, mejorando la visibilidad y análisis de datos en tiempo real. Desarrollé una aplicación web para automatizar y protocolizar el flujo de trabajo, desde la toma de muestras hasta la notificación de resultados de PCR para instituciones de salud. Complementé el sistema con un bot de Telegram que facilita la consulta de resultados para la población.",
+  },
+  {
+    date: "Julio 2010 - Octubre 2017",
+    title: "Desarrollador Web Full Stack",
+    description: "Diseñé y desarrollé plantillas personalizadas para sitios en WordPress de diversas temáticas, utilizando Bootstrap para asegurar un diseño adaptable. Optimicé cada plantilla para mejorar su rendimiento en motores de búsqueda, logrando sitios SEO-friendly y orientados a la conversión.",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-700">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-6">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

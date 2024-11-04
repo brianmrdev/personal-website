@@ -1,0 +1,38 @@
+<header class="sticky top-0 z-50 bg-base-200 bg-opacity-90">
+  <div class="navbar">
+    <div class="container mx-auto max-w-6xl">
+      <!-- Parte izquierda del navbar -->
+      <div class="flex-1">
+        <a class="btn btn-ghost text-xl" href="/">Brian Martinez</a>
+      </div>
+      
+      <!-- Parte derecha del navbar -->
+      <div class="flex-none">
+        <!-- Botón de menú móvil -->
+        <div class="dropdown dropdown-end lg:hidden">
+          <label tabindex="0" class="btn btn-ghost lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </label>
+          <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+            <li><a>Servicios</a></li>
+            <li><a>Link</a></li>
+            <li><a>Link</a></li>
+            <li><a>Link</a></li>
+          </ul>
+        </div>
+
+        <!-- Menú horizontal en pantallas grandes -->
+        <ul class="menu menu-horizontal px-1 hidden lg:flex">
+          <li><a href="/#services" class="hover:text-blue-400">Servicios</a></li>
+          <li><a href="/#experience" class="hover:text-blue-400">Experiencia</a></li>
+          <li><a href="/portfolio" class="hover:text-blue-400">Portafolio</a></li>
+          <li><a href="/#skill" class="hover:text-blue-400">Skill</a></li>
+          <li><a href="/#" class="hover:text-blue-400">Acerca de</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
