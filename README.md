@@ -1,54 +1,78 @@
-# Astro Starter Kit: Basics
 
-```sh
-npm create astro@latest -- --template basics
+# 🌐 Brian Martínez | Portafolio de Desarrollador Web Full Stack
+
+Este es el repositorio de mi página web personal, que sirve como portafolio y sitio profesional. En ella comparto mis proyectos, experiencias y habilidades como desarrollador web full stack.
+
+## 📝 Descripción
+
+La página muestra mi experiencia en el desarrollo web, con secciones que destacan proyectos, habilidades, servicios, y más. Está construida para ser rápida, accesible, y fácil de navegar, reflejando mi enfoque profesional en el desarrollo eficiente y escalable.
+
+## 🚀 Tecnologías
+
+- **Astro**: Framework de front-end para generar sitios rápidos y estáticos.
+- **Tailwind CSS**: Utilizado para la estilización y diseño responsivo.
+- **DaisyUI**: Biblioteca de componentes para mejorar la apariencia y usabilidad.
+- **GitHub Pages / Cloudflare Pages**: Opciones de despliegue para la página.
+
+## 📂 Estructura del Proyecto
+
+- **`src/pages`**: Contiene las páginas del sitio.
+- **`src/components`**: Componentes reutilizables de la página.
+- **`public/`**: Archivos estáticos (imágenes, favicon, `robots.txt`, etc.).
+- **`astro.config.mjs`**: Configuración de Astro, donde se define el adaptador de despliegue y otras configuraciones.
+
+## ⚙️ Instalación y Configuración
+
+1. Clona el repositorio:
+
+   ```bash
+   git clone https://github.com/brianmrdev/personal-website.git
+   cd personal-website
+   ```
+
+2. Instala las dependencias:
+
+   ```bash
+   pnpm install
+   ```
+
+3. Configura el archivo `astro.config.mjs` si necesitas ajustes específicos de despliegue o integración.
+
+## ▶️ Ejecución Local
+
+Para correr el proyecto localmente:
+
+```bash
+pnpm dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Visita `http://localhost:4321` en tu navegador para ver el sitio en desarrollo.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Despliegue
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+### Opción 1: GitHub Pages
 
-## 🚀 Project Structure
+1. Configura el adaptador de GitHub Pages en `astro.config.mjs`.
+2. Ejecuta el siguiente comando para hacer el build y despliegue en GitHub Pages:
 
-Inside of your Astro project, you'll see the following folders and files:
+   ```bash
+   pnpm build
+   pnpm run deploy
+   ```
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+### Opción 2: Cloudflare Pages (opcional)
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+1. Configura el adaptador de Cloudflare en `astro.config.mjs` si deseas usar Cloudflare Pages.
+2. Sigue las instrucciones de Cloudflare Pages para configurar el despliegue.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🌍 Sitemap y SEO
 
-Any static assets, like images, can be placed in the `public/` directory.
+El proyecto incluye un archivo `sitemap.xml` y un `robots.txt` para mejorar la indexación en motores de búsqueda. La metainformación de cada página está optimizada para SEO.
 
-## 🧞 Commands
+## 📄 Licencia
 
-All commands are run from the root of the project, from a terminal:
+Este proyecto está licenciado bajo la MIT License.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+---
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+¡Gracias por visitar mi portafolio! Si tienes alguna pregunta o comentario, no dudes en contactarme.
