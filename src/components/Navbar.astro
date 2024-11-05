@@ -1,3 +1,7 @@
+---
+import LinkNavbar from "./LinkNavbar.astro";
+---
+
 <header class="sticky top-0 z-50 bg-base-200 bg-opacity-90">
   <div class="navbar">
     <div class="container mx-auto max-w-6xl">
@@ -16,21 +20,13 @@
             </svg>
           </label>
           <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-            <li><a>Servicios</a></li>
-            <li><a>Link</a></li>
-            <li><a>Link</a></li>
-            <li><a>Link</a></li>
+            <LinkNavbar />
           </ul>
         </div>
 
         <!-- Menú horizontal en pantallas grandes -->
         <ul class="menu menu-horizontal px-1 hidden lg:flex">
-          <li><a href="/#services" class="hover:text-blue-400">Servicios</a></li>
-          <li><a href="/#experience" class="hover:text-blue-400">Experiencia</a></li>
-          <li><a href="/portfolio" class="hover:text-blue-400">Portafolio</a></li>
-          <li><a href="/#skill" class="hover:text-blue-400">Skill</a></li>
-          <li><a href="/#" class="hover:text-blue-400">Acerca de</a></li>
-          
+          <LinkNavbar />
         </ul>
       </div>
     </div>
