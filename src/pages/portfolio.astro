@@ -12,7 +12,7 @@ const projects = await getCollection("projects");
   description="Explora el portafolio de Brian Martínez, que incluye proyectos destacados en desarrollo web full stack, aplicaciones personalizadas y soluciones digitales a medida."
 >
   <main class="container mx-auto">
-    <section id="portfolio" class="pt-20 py-10">
+    <section id="portfolio" class="pt-20 py-10 px-4">
       <div class="flex justify-center">
         <h2
           class="text-4xl sm:text-5xl leading-tight font-medium mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-teal-400 text-center"
@@ -26,7 +26,7 @@ const projects = await getCollection("projects");
         con la calidad y el uso de tecnologías modernas.
       </p>
 
-      <div class="container mx-auto max-w-6xl py-6 px-4">
+      <div class="container mx-auto max-w-6xl py-6">
         {
           projects.map((project) => {
             const { data } = project;
