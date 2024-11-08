@@ -1,0 +1,39 @@
+<button
+  id="scrollTopBtn"
+  class="hidden fixed bottom-4 right-4 bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 focus:outline-none"
+>
+  ↑
+</button>
+
+<script is:inline>
+  function initializeScrollButton() {
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    if (!scrollTopBtn) return;
+
+    function toggleScrollButton() {
+      if (window.scrollY > 200) {
+        scrollTopBtn.classList.remove("hidden");
+      } else {
+        scrollTopBtn.classList.add("hidden");
+      }
+    }
+
+    window.addEventListener("scroll", toggleScrollButton);
+
+    toggleScrollButton();
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
+
+  initializeScrollButton();
+
+  document.addEventListener("astro:after-swap", () => {
+    initializeScrollButton();
+  });
+</script>
