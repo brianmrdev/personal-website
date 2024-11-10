@@ -5,7 +5,7 @@ interface Props {
 
 const { title } = Astro.props;
 ---
-<a class="block p-6 border border-gray-600 rounded-lg shadow hover:bg-gray-800 bg-gray-900 transition duration-300 text-center">
+<div class="block p-6 border border-gray-600 rounded-lg shadow hover:bg-gray-800 bg-gray-900 transition duration-300 text-center">
     <slot />
     <span class="text-xl font-bold tracking-tight text-gray-400">{title}</span>
-</a>
+</div>
