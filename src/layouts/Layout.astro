@@ -2,6 +2,7 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Navbar from "../components/Navbar.astro";
+import Overtracking from '../components/Overtracking.astro';
 import { ClientRouter } from "astro:transitions";
 import { URL_BASE, IMAGE, IMG_ALT } from "../config";
 
@@ -25,6 +26,7 @@ const {
       img_alt={img_alt}
     />
     <ClientRouter />
+    <Overtracking />
   </head>
   <body>
     <div>
