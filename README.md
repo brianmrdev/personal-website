@@ -60,7 +60,7 @@ El proyecto incluye un archivo `sitemap.xml` y un `robots.txt` para mejorar la i
 
 ## 📄 Licencia
 
-Este proyecto está licenciado bajo la MIT License.
+Este proyecto está licenciado bajo la [MIT License](./LICENSE).
 
 ---
 
