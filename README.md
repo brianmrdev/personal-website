@@ -12,7 +12,7 @@ La página muestra mi experiencia en el desarrollo web, con secciones que destac
 - **Astro**: Framework de front-end para generar sitios rápidos y estáticos.
 - **Tailwind CSS**: Utilizado para la estilización y diseño responsivo.
 - **DaisyUI**: Biblioteca de componentes para mejorar la apariencia y usabilidad.
-- **GitHub Pages / Cloudflare Pages**: Opciones de despliegue para la página.
+- **Cloudflare Pages**: Despliegue para la página.
 
 ## 📂 Estructura del Proyecto
 
@@ -50,20 +50,9 @@ Visita `http://localhost:4321` en tu navegador para ver el sitio en desarrollo.
 
 ## 🚀 Despliegue
 
-### Opción 1: GitHub Pages
+### Cloudflare Pages (opcional)
 
-1. Configura el adaptador de GitHub Pages en `astro.config.mjs`.
-2. Ejecuta el siguiente comando para hacer el build y despliegue en GitHub Pages:
-
-   ```bash
-   pnpm build
-   pnpm run deploy
-   ```
-
-### Opción 2: Cloudflare Pages (opcional)
-
-1. Configura el adaptador de Cloudflare en `astro.config.mjs` si deseas usar Cloudflare Pages.
-2. Sigue las instrucciones de Cloudflare Pages para configurar el despliegue.
+1. Sigue las instrucciones de Cloudflare Pages para configurar el despliegue.
 
 ## 🌍 Sitemap y SEO
 
