@@ -1,0 +1,46 @@
+---
+const SERVICE = [
+  {
+    number: "1",
+    title: "Desarrollo de Landing Pages y Sitios Web Corporativos",
+    description:
+      "Creación de páginas de aterrizaje (Landing Pages) y sitios web profesionales enfocados en conversión y presencia de marca, adaptados a la identidad de cada empresa.",
+  },
+  {
+    number: "2",
+    title: "Tiendas Virtuales",
+    description:
+      "Diseño y desarrollo de tiendas en línea con interfaces optimizadas para aumentar la conversión, integrando métodos de pago seguros y una gestión de productos eficiente.",
+  },
+  {
+    number: "3",
+    title: "Desarrollo de Aplicaciones Web a la Medida",
+    description:
+      "Desarrollo de aplicaciones web personalizadas para satisfacer necesidades específicas, con arquitecturas escalables que garantizan un rendimiento óptimo y seguridad.",
+  },
+  {
+    number: "4",
+    title: "Infraestructura y Administración de VPS y Clouds",
+    description:
+      "Gestión de servidores virtuales y entornos en la nube mediante herramientas como Docker y Kubernetes, asegurando alta disponibilidad, escalabilidad y seguridad en entornos de producción.",
+  },
+];
+---
+
+<div class="container mx-auto max-w-6xl py-6 space-y-6">
+  {
+    SERVICE.map((service) => {
+      return (
+        <div class="flex items-center justify-between border-b border-gray-600 pb-4">
+          <span class="text-2xl font-semibold text-blue-400">
+            {service.number}
+          </span>
+          <div class="flex-grow mx-4">
+            <h3 class="text-xl font-medium">{service.title}</h3>
+            <p class="text-gray-300">{service.description}</p>
+          </div>
+        </div>
+      );
+    })
+  }
+</div>
