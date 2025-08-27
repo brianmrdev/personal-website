@@ -4,6 +4,23 @@ import { getCollection } from "astro:content";
 import ProjectCard from "../components/ProjectCard.astro";
 
 const projects = await getCollection("projects");
+
+// Ordenar proyectos por 'order' descendente (mayor primero), con desempate por título
+
+const getOrderValue = (data: unknown): number | null => {
+  const anyData = data as { order?: unknown } | null | undefined;
+  const value = anyData?.order;
+  return typeof value === "number" ? value : null;
+};
+
+const sortedProjects = [...projects].sort((a, b) => {
+  const aOrder = getOrderValue(a.data);
+  const bOrder = getOrderValue(b.data);
+  const aRank = aOrder === null ? -Infinity : aOrder;
+  const bRank = bOrder === null ? -Infinity : bOrder;
+  if (aRank !== bRank) return bRank - aRank;
+  return (a.data?.title || "").localeCompare(b.data?.title || "");
+});
 ---
 
 <Layout
@@ -28,7 +45,7 @@ const projects = await getCollection("projects");
 
       <div class="container mx-auto max-w-6xl py-6">
         {
-          projects.map((project) => {
+          sortedProjects.map((project) => {
             const { data } = project;
             const { title, description, image, tags, github, link } = data;
 
