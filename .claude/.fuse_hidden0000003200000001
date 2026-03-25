@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm -v)",
+      "Bash(source ~/.nvm/nvm.sh)",
+      "Bash(nvm use:*)",
+      "Bash(npx @astrojs/upgrade)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm --version)",
+      "Bash(rm -rf node_modules)",
+      "Bash(pnpm install:*)",
+      "Bash(npx astro:*)",
+      "WebSearch"
+    ]
+  }
+}

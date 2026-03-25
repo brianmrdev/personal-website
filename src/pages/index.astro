@@ -4,22 +4,19 @@ import PythonIcon from "../components/icons/Python.astro";
 import DjangoIcon from "../components/icons/Django.astro";
 import FastAPIIcon from "../components/icons/FastAPI.astro";
 import JavaScriptIcon from "../components/icons/JavaScript.astro";
+import TypeScriptIcon from "../components/icons/TypeScript.astro";
+import ReactIcon from "../components/icons/React.astro";
+import NextjsIcon from "../components/icons/Nextjs.astro";
 import AstroIcon from "../components/icons/AstroWeb.astro";
 import VueIcon from "../components/icons/Vuejs.astro";
-import BootstrapIcon from "../components/icons/Bootstrap.astro";
 import TailwindIcon from "../components/icons/Tailwindcss.astro";
-import WordpressIcon from "../components/icons/Wordpress.astro";
 import GitIcon from "../components/icons/Git.astro";
 import DockerIcon from "../components/icons/Docker.astro";
-import KubernetesIcon from "../components/icons/Kubernetes.astro";
 import CodeIcon from "../components/icons/Code.astro";
 import ClockIcon from "../components/icons/Clock.astro";
 import ServiceIcon from "../components/icons/Service.astro";
 import DownloadIcon from "../components/icons/Download.astro";
-import SocialLink from "../components/SocialLink.astro";
-import GithubIcon from "../components/icons/Github.astro";
 import TelegramIcon from "../components/icons/Telegram.astro";
-import LinkedinIcon from "../components/icons/Linkedin.astro";
 import Layout from "../layouts/Layout.astro";
 import Experience from "../components/Experience.astro";
 import Service from "../components/Service.astro";
@@ -28,23 +25,38 @@ import Service from "../components/Service.astro";
 <Layout
   title="Brian Martínez | Desarrollador Web Full Stack"
   ,
-  description="Bienvenido al sitio web de Brian Martínez, desarrollador web full stack especializado en la creación de soluciones digitales innovadoras y eficientes."
+  description="Brian Martínez, desarrollador web full stack con +10 años de experiencia en Python, Django, JavaScript, React y Next.js. Diseño y desarrollo sitios web, tiendas online y aplicaciones web a medida."
 >
+  <script is:inline type="application/ld+json" slot="head" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Brian Martínez",
+    "url": "https://brianmartinez.dev",
+    "jobTitle": "Desarrollador Web Full Stack",
+    "description": "Desarrollador web full stack con +10 años de experiencia especializado en Python, Django, JavaScript, React y Next.js.",
+    "image": "https://brianmartinez.dev/brian-martinez.webp",
+    "sameAs": [
+      "https://github.com/brianmrdev/",
+      "https://www.linkedin.com/in/brianmrdev",
+      "https://t.me/brianmrdev"
+    ],
+    "knowsAbout": ["Python", "Django", "FastAPI", "JavaScript", "TypeScript", "React", "Next.js", "Astro", "Vue.js", "Tailwind CSS", "Docker", "Git"]
+  })} />
   <main>
     <section id="sobre-mi" class="py-14 md:pt-36 bg-base-200 min-h-screen">
       <div
         class="container mx-auto max-w-6xl px-4 flex flex-col lg:flex-row items-center lg:items-start"
       >
         <div class="lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0">
-          <h2 class="text-3xl md:text-4xl font-medium mb-2">
+          <h2 class="text-3xl md:text-4xl font-medium mb-2 animate-fade-up opacity-0" style="animation-delay: 0.1s;">
             Hola 👋 soy Brian
           </h2>
           <h3
-            class="text-5xl md:text-6xl font-medium mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-teal-400"
+            class="text-5xl md:text-6xl font-medium mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-teal-400 animate-fade-up opacity-0" style="animation-delay: 0.3s;"
           >
             Desarrollador Web Full Stack
           </h3>
-          <p class="text-xl mb-5">
+          <p class="text-xl mb-5 animate-fade-up opacity-0" style="animation-delay: 0.5s;">
             +10 años de experiencia creando soluciones web eficientes y
             escalables. Experto en tecnologías como JavaScript y Python.
             Comprometido con el desarrollo ágil de aplicaciones que optimizan
@@ -52,50 +64,31 @@ import Service from "../components/Service.astro";
           </p>
 
           <div
-            class="flex flex-col sm:flex-row items-center sm:space-x-5 space-y-4 sm:space-y-0"
+            class="flex flex-col sm:flex-row items-center sm:space-x-5 space-y-4 sm:space-y-0 animate-fade-up opacity-0" style="animation-delay: 0.7s;"
           >
             <a
+              href="https://t.me/brianmrdev"
+              class="text-lg font-normal btn bg-blue-500 border-blue-500 text-white hover:bg-blue-400 hover:border-blue-400 rounded-3xl inline-flex items-center justify-center py-3 px-5 flex-nowrap"
+              target="_blank"
+              rel="noopener"
+            >
+              Contáctame
+              <TelegramIcon class="size-6 ml-2" />
+            </a>
+
+            <a
               href="https://s3.brianmartinez.dev/brian-cv/brian-cv-es.pdf"
-              class="text-lg font-normal btn btn-outline text-blue-400 hover:bg-blue-400 hover:border-blue-400 rounded-3xl inline-flex items-center justify-center py-3 px-5 flex-nowrap"
+              class="text-lg font-normal btn btn-outline text-teal-400 hover:bg-teal-400 hover:border-teal-400 hover:text-white rounded-3xl inline-flex items-center justify-center py-3 px-5 flex-nowrap"
               target="_blank"
               rel="noopener"
             >
               Descargar CV
               <DownloadIcon class="size-6 ml-2" />
             </a>
-
-            <div class="flex space-x-4">
-              <SocialLink
-                href="https://github.com/brianmrdev/"
-                target="_blank"
-                rel="noopener"
-                aria-label="Guithub"
-              >
-                <GithubIcon class="size-6" />
-              </SocialLink>
-
-              <SocialLink
-                href="https://t.me/brianmrdev"
-                target="_blank"
-                rel="noopener"
-                aria-label="Telegram"
-              >
-                <TelegramIcon class="size-6" />
-              </SocialLink>
-
-              <SocialLink
-                href="https://www.linkedin.com/in/brianmrdev"
-                target="_blank"
-                rel="noopener"
-                aria-label="Linkedin"
-              >
-                <LinkedinIcon class="size-6" />
-              </SocialLink>
-            </div>
           </div>
         </div>
 
-        <div class="lg:w-1/2 flex justify-center lg:justify-end hero-image-box">
+        <div class="lg:w-1/2 flex justify-center lg:justify-end hero-image-box animate-fade-up opacity-0" style="animation-delay: 0.5s;">
           <img
             src="brian-martinez.webp"
             alt="Brian Martinez"
@@ -109,32 +102,34 @@ import Service from "../components/Service.astro";
 
     <section id="servicios" class="pt-20 py-10 px-4">
       <h2
+        data-animate="fade-up"
         class="text-4xl sm:text-5xl font-medium mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-teal-400 flex items-center justify-center"
       >
         <ServiceIcon class="inline-block me-2 text-blue-400" />
         Mis Servicios
       </h2>
 
-      <p class="text-center mb-5 max-w-3xl mx-auto">
+      <p data-animate="fade-up" data-animate-delay="0.1s" class="text-center mb-5 max-w-3xl mx-auto">
         Ofrezco soluciones de desarrollo web full stack, optimizadas y adaptadas
         a tus necesidades, utilizando tecnologías modernas para proyectos
         eficientes y escalables.
       </p>
 
-      <div class="container mx-auto max-w-6xl py-6 space-y-6">
+      <div class="container mx-auto max-w-6xl py-6">
         <Service />
       </div>
     </section>
 
     <section id="experiencia" class="pt-20 py-10 px-4 bg-base-200">
       <h2
+        data-animate="fade-up"
         class="text-4xl sm:text-5xl font-medium mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-teal-400 flex items-center justify-center"
       >
         <ClockIcon class="inline-block me-2 text-blue-400" />
         Mi Experiencia
       </h2>
 
-      <p class="text-center mb-5 max-w-3xl mx-auto">
+      <p data-animate="fade-up" data-animate-delay="0.1s" class="text-center mb-5 max-w-3xl mx-auto">
         He trabajado en proyectos de desarrollo web y administración de
         sistemas, adquiriendo habilidades en tecnologías modernas y soluciones
         escalables adaptadas a cada cliente.
@@ -146,87 +141,126 @@ import Service from "../components/Service.astro";
 
     <section id="skill" class="pt-20 py-10 px-4">
       <h2
+        data-animate="fade-up"
         class="text-4xl sm:text-5xl font-medium mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-teal-400 flex items-center justify-center"
       >
         <CodeIcon class="inline-block me-2 text-blue-400" />
-        Mis Skill
+        Mis Skills
       </h2>
-      <p class="text-center mb-5 max-w-3xl mx-auto">
+      <p data-animate="fade-up" data-animate-delay="0.1s" class="text-center mb-5 max-w-3xl mx-auto">
         Amplia experiencia en tecnologías y herramientas modernas para crear
         soluciones eficientes y escalables.
       </p>
 
       <div
-        class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 max-w-6xl mx-auto py-6"
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 max-w-6xl mx-auto py-6"
       >
         <Skill title="Python">
-          <PythonIcon class="text-blue-500 mx-auto mb-4" />
+          <PythonIcon class="mx-auto mb-4" style="color: #3776AB;" />
         </Skill>
         <Skill title="Django">
-          <DjangoIcon class="text-blue-500 mx-auto mb-4" />
+          <DjangoIcon class="mx-auto mb-4" style="color: #092E20;" />
         </Skill>
         <Skill title="FastAPI">
-          <FastAPIIcon class="text-blue-500 mx-auto mb-4" />
+          <FastAPIIcon class="mx-auto mb-4" style="color: #009688;" />
         </Skill>
         <Skill title="JavaScript">
-          <JavaScriptIcon class="text-blue-500 mx-auto mb-4" />
+          <JavaScriptIcon class="mx-auto mb-4" style="color: #F7DF1E;" />
+        </Skill>
+        <Skill title="TypeScript">
+          <TypeScriptIcon class="mx-auto mb-4" style="color: #3178C6;" />
+        </Skill>
+        <Skill title="React">
+          <ReactIcon class="mx-auto mb-4" style="color: #61DAFB;" />
+        </Skill>
+        <Skill title="Next.js">
+          <NextjsIcon class="mx-auto mb-4" style="color: #ffffff;" />
         </Skill>
         <Skill title="Astro">
-          <AstroIcon class="text-blue-500 mx-auto mb-4" />
+          <AstroIcon class="mx-auto mb-4" style="color: #FF5D01;" />
         </Skill>
         <Skill title="Vue.js">
-          <VueIcon class="text-blue-500 mx-auto mb-4" />
-        </Skill>
-        <Skill title="Bootstrap">
-          <BootstrapIcon class="text-blue-500 mx-auto mb-4" />
+          <VueIcon class="mx-auto mb-4" style="color: #4FC08D;" />
         </Skill>
         <Skill title="Tailwind CSS">
-          <TailwindIcon class="text-blue-500 mx-auto mb-4" />
-        </Skill>
-        <Skill title="Wordpress">
-          <WordpressIcon class="text-blue-500 mx-auto mb-4" />
+          <TailwindIcon class="mx-auto mb-4" style="color: #06B6D4;" />
         </Skill>
         <Skill title="Git">
-          <GitIcon class="text-blue-500 mx-auto mb-4" />
+          <GitIcon class="mx-auto mb-4" style="color: #F05032;" />
         </Skill>
         <Skill title="Docker">
-          <DockerIcon class="text-blue-500 mx-auto mb-4" />
-        </Skill>
-        <Skill title="Kubernetes">
-          <KubernetesIcon class="text-blue-500 mx-auto mb-4" />
+          <DockerIcon class="mx-auto mb-4" style="color: #2496ED;" />
         </Skill>
       </div>
     </section>
   </main>
 </Layout>
 
+<script>
+  let isFirstLoad = true;
+  document.addEventListener("astro:page-load", () => {
+    if (isFirstLoad) {
+      isFirstLoad = false;
+      return;
+    }
+    document.querySelectorAll(".animate-fade-up").forEach((el) => {
+      const htmlEl = el as HTMLElement;
+      htmlEl.style.animation = "none";
+      htmlEl.offsetHeight; // force reflow
+      htmlEl.style.animation = "";
+    });
+  });
+</script>
+
 <style>
   html {
     scroll-behavior: smooth;
   }
+
+  /* Animación de entrada */
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out forwards;
+  }
+
+  /* Blobs decorativos */
   .hero-image-box {
     position: relative;
     margin-left: auto;
     margin-right: auto;
   }
-  .hero-image-box::before {
+  .hero-image-box::before,
+  .hero-image-box::after {
     content: "";
     position: absolute;
-    bottom: 0;
-    left: 0;
+    border-radius: 50%;
+    filter: blur(150px);
+    pointer-events: none;
+  }
+  /* Blob inferior-izquierdo (azul) */
+  .hero-image-box::before {
+    bottom: -5%;
+    left: 15%;
     width: 220px;
     height: 220px;
-    border-radius: 50%;
-    background: #60a5fa;
-    background: -o-linear-gradient(
-      190deg,
-      #60a5fa 0%,
-      rgba(115, 67, 210, 0) 100%
-    );
     background: linear-gradient(260deg, #60a5fa 0%, rgba(115, 67, 210, 0) 100%);
-    -webkit-filter: blur(150px);
-    filter: blur(150px);
-    margin-left: 15%;
-    margin-bottom: -5%;
+  }
+  /* Blob superior-derecho (indigo/teal) */
+  .hero-image-box::after {
+    top: -10%;
+    right: 5%;
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(140deg, #6366f1 0%, rgba(45, 212, 191, 0) 100%);
+    opacity: 0.7;
   }
 </style>

@@ -1,21 +1,13 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  stroke-width="2"
-  stroke="currentColor"
-  fill="none"
-  stroke-linecap="round"
-  stroke-linejoin="round"
-  ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-    d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path
-    d="M14 4l-4 16"></path>
-    <style>
-        svg { color: #000; }
-        @media (prefers-color-scheme: dark) {
-            svg { color: #FFF; }
-        }
-    </style>
-    </svg
->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <rect width="32" height="32" rx="8" fill="#60a5fa"/>
+  <text
+    x="16"
+    y="22"
+    text-anchor="middle"
+    font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif"
+    font-size="14"
+    font-weight="700"
+    fill="white"
+    letter-spacing="-0.5"
+  >BM</text>
+</svg>

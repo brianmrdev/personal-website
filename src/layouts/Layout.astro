@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar.astro";
 import Overtracking from '../components/Overtracking.astro';
 import { ClientRouter } from "astro:transitions";
 import { URL_BASE, IMAGE, IMG_ALT } from "../config";
+import "../styles/global.css";
 
 const {
   title,
@@ -16,7 +17,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" data-theme="night">
   <head>
     <Header
       title={title}
@@ -27,6 +28,7 @@ const {
     />
     <ClientRouter />
     <Overtracking />
+    <slot name="head" />
   </head>
   <body>
     <div>
@@ -42,4 +44,30 @@ const {
     min-height: 100dvh;
     grid-template-rows: auto 1fr auto;
   }
+
 </style>
+
+<script>
+  function initScrollAnimations() {
+    const elements = document.querySelectorAll("[data-animate]");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement;
+            const delay = el.dataset.animateDelay ?? "0s";
+            el.style.transitionDelay = delay;
+            el.classList.add("visible");
+            observer.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+  }
+
+  document.addEventListener("astro:page-load", initScrollAnimations);
+</script>

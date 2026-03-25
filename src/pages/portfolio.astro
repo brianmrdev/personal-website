@@ -5,8 +5,6 @@ import ProjectCard from "../components/ProjectCard.astro";
 
 const projects = await getCollection("projects");
 
-// Ordenar proyectos por 'order' descendente (mayor primero), con desempate por título
-
 const getOrderValue = (data: unknown): number | null => {
   const anyData = data as { order?: unknown } | null | undefined;
   const value = anyData?.order;
@@ -21,6 +19,9 @@ const sortedProjects = [...projects].sort((a, b) => {
   if (aRank !== bRank) return bRank - aRank;
   return (a.data?.title || "").localeCompare(b.data?.title || "");
 });
+
+// Collect unique tags for filter
+const allTags = [...new Set(sortedProjects.flatMap((p) => p.data.tags))].sort();
 ---
 
 <Layout
@@ -32,35 +33,57 @@ const sortedProjects = [...projects].sort((a, b) => {
     <section id="proyectos" class="pt-20 py-10 px-4">
       <div class="flex justify-center">
         <h2
-          class="text-4xl sm:text-5xl leading-tight font-medium mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-teal-400 text-center"
+          class="text-4xl sm:text-5xl leading-tight font-medium mb-4 bg-clip-text text-transparent bg-linear-to-r from-blue-400 via-indigo-500 to-teal-400 text-center"
         >
           Portafolio de Proyectos
         </h2>
       </div>
-      <p class="text-center mb-5 max-w-3xl mx-auto">
+      <p class="text-center mb-8 max-w-3xl mx-auto">
         Descubre algunos de mis proyectos recientes, creados para brindar
         soluciones innovadoras y optimizadas. Cada trabajo refleja mi compromiso
         con la calidad y el uso de tecnologías modernas.
       </p>
 
-      <div class="container mx-auto max-w-6xl py-6">
+      <!-- Tag filter -->
+      <div class="flex flex-wrap justify-center gap-2 mb-8 max-w-4xl mx-auto" id="tag-filters">
+        <button
+          class="filter-btn active text-sm font-medium px-4 py-1.5 rounded-full border transition-colors duration-200"
+          data-tag="all"
+        >
+          Todos
+        </button>
+        {
+          allTags.map((tag) => (
+            <button
+              class="filter-btn text-sm font-medium px-4 py-1.5 rounded-full border transition-colors duration-200"
+              data-tag={tag}
+            >
+              {tag}
+            </button>
+          ))
+        }
+      </div>
+
+      <!-- Grid -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto py-2"
+        id="projects-grid"
+      >
         {
           sortedProjects.map((project) => {
             const { data } = project;
             const { title, description, image, tags, github, link } = data;
-
             return (
-              <ProjectCard
-                title={title}
-                description={description}
-                image={{
-                  src: image.src,
-                  alt: image.alt,
-                }}
-                tags={tags}
-                github={github}
-                link={link}
-              />
+              <div class="project-item" data-tags={tags.join(",")}>
+                <ProjectCard
+                  title={title}
+                  description={description}
+                  image={{ src: image.src, alt: image.alt }}
+                  tags={tags}
+                  github={github}
+                  link={link}
+                />
+              </div>
             );
           })
         }
@@ -68,3 +91,45 @@ const sortedProjects = [...projects].sort((a, b) => {
     </section>
   </main>
 </Layout>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const buttons = document.querySelectorAll<HTMLButtonElement>(".filter-btn");
+    const items = document.querySelectorAll<HTMLElement>(".project-item");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const tag = btn.dataset.tag;
+
+        buttons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        items.forEach((item) => {
+          const tags = item.dataset.tags?.split(",") ?? [];
+          if (tag === "all" || tags.includes(tag!)) {
+            item.style.display = "";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  .filter-btn {
+    background-color: transparent;
+    border-color: rgb(75 85 99 / 0.5);
+    color: rgb(156 163 175);
+  }
+  .filter-btn:hover {
+    border-color: rgb(96 165 250 / 0.5);
+    color: rgb(96 165 250);
+  }
+  .filter-btn.active {
+    background-color: rgb(30 58 138 / 0.4);
+    border-color: rgb(96 165 250 / 0.6);
+    color: rgb(147 197 253);
+  }
+</style>

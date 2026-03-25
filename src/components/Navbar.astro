@@ -21,7 +21,7 @@ const navItems = [
     url: "/portfolio",
   },
   {
-    title: "Skill",
+    title: "Skills",
     label: "skill",
     url: "/#skill",
   },
@@ -91,6 +91,8 @@ const navItems = [
 </script>
 
 <style>
+  @reference "tailwindcss";
+
   nav {
     animation: nav-shadown 1s linear both;
     animation-timeline: scroll();
@@ -103,10 +105,13 @@ const navItems = [
 
   @keyframes nav-shadown {
     0% {
-      @apply dark:bg-gray-800/0 bg-white/0;
+      background-color: transparent;
     }
     to {
-      @apply shadow-lg ring-1 backdrop-blur ring-white/10;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      ring: 1px rgb(255 255 255 / 0.1);
+      backdrop-filter: blur(12px);
+      outline: 1px solid rgb(255 255 255 / 0.1);
     }
   }
 </style>

@@ -17,66 +17,82 @@ interface Props {
 }
 
 const { title, description, image, tags, github, link } = Astro.props;
+
+const primaryLink = link || github;
 ---
 
 <div
-  class="flex flex-col items-center mb-8 bg-white border border-gray-200 rounded-lg shadow md:flex-row md:w-full hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-900 dark:hover:bg-gray-800 transition duration-300"
+  class="group relative rounded-2xl overflow-hidden border border-gray-700/50 bg-gray-900 hover:border-blue-400/40 transition-all duration-300 flex flex-col"
 >
-  <img
-    class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-    src={image.src}
-    alt={image.alt}
-    loading="lazy"
-  />
-  <div class="flex flex-col justify-between p-4 leading-normal">
-    <h1
-      class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+  <!-- Image with zoom + overlay -->
+  <div class="relative overflow-hidden h-52">
+    <img
+      class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+      src={image.src}
+      alt={image.alt}
+      loading="lazy"
+    />
+    <div
+      class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4"
     >
-      {title}
-    </h1>
-    <p class="mb-3 font-normal text-gray-700 dark:text-gray-300">
+      {
+        link && (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium px-4 py-2 rounded-full transition-colors duration-200"
+          >
+            Ver proyecto
+            <ExternalLinkIcon class="size-4" />
+          </a>
+        )
+      }
+      {
+        github && (
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium px-4 py-2 rounded-full transition-colors duration-200"
+          >
+            GitHub
+            <GithubIcon class="size-4" />
+          </a>
+        )
+      }
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="p-5 flex flex-col flex-1">
+    <h3 class="text-base font-semibold mb-2 leading-snug">
+      {
+        primaryLink ? (
+          <a
+            href={primaryLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-blue-400 transition-colors"
+          >
+            {title}
+          </a>
+        ) : (
+          title
+        )
+      }
+    </h3>
+    <p class="text-gray-400 text-sm leading-relaxed line-clamp-3 mb-4 flex-1">
       {description}
     </p>
-
-    <div class="flex items-center justify-between mt-4">
-      <div class="flex flex-wrap gap-1">
-        {
-          tags.map((tag) => (
-            <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
-              {tag}
-            </span>
-          ))
-        }
-      </div>
-
-      <div class="flex space-x-4">
-        {
-          github && (
-            <a
-              href={github}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-blue-500 hover:text-blue-700 transition"
-              aria-label="GitHub Repository"
-            >
-              <GithubIcon class="size-6" />
-            </a>
-          )
-        }
-        {
-          link && (
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-blue-500 hover:text-blue-700 transition"
-              aria-label="Live Project Link"
-            >
-              <ExternalLinkIcon class="size-6" />
-            </a>
-          )
-        }
-      </div>
+    <div class="flex flex-wrap gap-2">
+      {
+        tags.map((tag) => (
+          <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-blue-900/40 text-blue-300 border border-blue-800/40">
+            {tag}
+          </span>
+        ))
+      }
     </div>
   </div>
 </div>

@@ -5,7 +5,7 @@ github: ""
 image:
   src: "/projects/aldana.webp"
   alt: "Captura de pantalla del proyecto Aldana Multiservices Group"
-tags: ["Python", "Django", "Bootstrap", "SEO"]
+tags: ["Python", "Django", "PostgreSQL"]
 order: 8
-description: "Diseño y desarrollo web integral desde cero para Aldana Multiservices Group, una empresa de soluciones logísticas y financieras globales. Lideré el proyecto, construyendo una plataforma robusta y responsive. El sitio fue meticulosamente optimizado para motores de búsqueda (SEO) y diseñado con un enfoque centrado en el usuario. El resultado es un portal digital estratégico que transmite confianza y profesionalismo, posicionando efectivamente los servicios de la empresa para atraer y convertir clientes en los mercados objetivo de América Latina, Europa y el Caribe."
+description: "Sitio web corporativo para Aldana Multiservices Group, empresa de soluciones logísticas y financieras con presencia en América Latina, Europa y el Caribe. La plataforma transmite confianza institucional y está orientada a la captación de clientes en mercados internacionales."
 ---

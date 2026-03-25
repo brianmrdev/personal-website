@@ -5,7 +5,7 @@ github: ""
 image:
   src: "/projects/infomed-hlg.webp"
   alt: "Captura de pantalla del proyecto de Portal Informativo del Centro de Información de Ciencias Médicas de Holguín"
-tags: ["Wordpress", "Portal Informativo", "SEO"]
+tags: ["WordPress", "PHP"]
 order: 1
-description: "Desarrollé un sitio web informativo para el Centro de Información de Ciencias Médicas de Holguín, con un diseño personalizado ajustado a las necesidades y preferencias del cliente. La plataforma ofrece recursos educativos, noticias, investigaciones y eventos relevantes del ámbito médico, diseñada para facilitar el acceso a la información y optimizada para una navegación clara y responsiva."
+description: "Portal informativo para el Centro de Información de Ciencias Médicas de Holguín, desarrollado en WordPress. Centraliza recursos educativos, investigaciones, noticias y eventos del ámbito médico para profesionales de la salud de la región."
 ---

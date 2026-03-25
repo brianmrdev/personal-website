@@ -1,10 +1,96 @@
 ---
 import ScrollTopButton from "./ScrollTopButton.astro";
+import GithubIcon from "./icons/Github.astro";
+import TelegramIcon from "./icons/Telegram.astro";
+import LinkedinIcon from "./icons/Linkedin.astro";
 ---
 
-<footer class="footer footer-center bg-base-300 text-base-content p-4">
-  <aside>
-    <p>© {new Date().getFullYear()} Brian Martínez Rodríguez</p>
-  </aside>
+<footer class="bg-base-300 text-base-content pt-12 pb-6 px-6">
+  <div class="container mx-auto max-w-6xl">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 mb-10">
+
+      <!-- Col 1: Identidad + CTA -->
+      <div data-animate="fade-up" data-animate-delay="0s">
+        <p class="text-xl font-semibold text-white">Brian Martínez</p>
+        <p class="text-sm text-gray-400 mt-1">Desarrollador Web Full Stack</p>
+        <p class="text-sm text-gray-400 mt-4 leading-relaxed">
+          ¿Tienes un proyecto en mente?<br />
+          <a
+            href="https://t.me/brianmrdev"
+            target="_blank"
+            rel="noopener"
+            class="text-blue-400 hover:text-blue-300 transition-colors duration-200 font-medium"
+          >
+            Hablemos →
+          </a>
+        </p>
+      </div>
+
+      <!-- Col 2: Navegación -->
+      <div data-animate="fade-up" data-animate-delay="0.1s">
+        <p class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Navegación</p>
+        <ul class="space-y-2">
+          {[
+            { href: "/#sobre-mi", label: "Sobre mí" },
+            { href: "/#servicios", label: "Servicios" },
+            { href: "/#experiencia", label: "Experiencia" },
+            { href: "/#skill", label: "Skills" },
+            { href: "/portfolio", label: "Portafolio" },
+          ].map(({ href, label }) => (
+            <li>
+              <a
+                href={href}
+                class="text-sm text-gray-400 hover:text-blue-400 transition-colors duration-200"
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Col 3: Redes sociales -->
+      <div data-animate="fade-up" data-animate-delay="0.2s">
+        <p class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Contacto</p>
+        <div class="flex flex-col gap-3">
+          <a
+            href="https://github.com/brianmrdev/"
+            target="_blank"
+            rel="noopener"
+            class="flex items-center gap-2 text-sm text-gray-400 hover:text-blue-400 transition-colors duration-200"
+          >
+            <GithubIcon class="size-5" />
+            GitHub
+          </a>
+          <a
+            href="https://t.me/brianmrdev"
+            target="_blank"
+            rel="noopener"
+            class="flex items-center gap-2 text-sm text-gray-400 hover:text-blue-400 transition-colors duration-200"
+          >
+            <TelegramIcon class="size-5" />
+            Telegram
+          </a>
+          <a
+            href="https://www.linkedin.com/in/brianmrdev"
+            target="_blank"
+            rel="noopener"
+            class="flex items-center gap-2 text-sm text-gray-400 hover:text-blue-400 transition-colors duration-200"
+          >
+            <LinkedinIcon class="size-5" />
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Separador + copyright -->
+    <div class="border-t border-gray-700/50 pt-6 text-center">
+      <p class="text-sm text-gray-500">
+        © {new Date().getFullYear()} Brian Martínez Rodríguez
+      </p>
+    </div>
+  </div>
 </footer>
 <ScrollTopButton />

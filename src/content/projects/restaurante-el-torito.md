@@ -5,7 +5,7 @@ github: ""
 image:
   src: "/projects/el-torito-asador.webp"
   alt: "Captura de pantalla del proyecto de Menú Digital para Restaurante con Carrito y Pago en Línea"
-tags: ["Wordpress", "WooCommerce", "SEO"]
+tags: ["WordPress", "WooCommerce"]
 order: 6
-description: "Desarrollé un menú digital interactivo que permite a los clientes de un restaurante explorar platos, añadir al carrito y completar el pago en línea. La plataforma optimiza el proceso de pedidos, brindando a los usuarios una experiencia rápida y conveniente desde cualquier dispositivo."
+description: "Menú digital interactivo para un restaurante que permite explorar platos, añadir al carrito y completar el pago en línea con WooCommerce. Optimiza el proceso de pedidos ofreciendo una experiencia rápida desde cualquier dispositivo."
 ---
