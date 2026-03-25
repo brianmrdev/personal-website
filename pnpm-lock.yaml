@@ -26,6 +26,9 @@ importers:
       typescript:
         specifier: ^5.6.3
         version: 5.9.3
+      zod:
+        specifier: ^4.3.6
+        version: 4.3.6
     devDependencies:
       daisyui:
         specifier: ^5

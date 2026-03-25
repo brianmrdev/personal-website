@@ -10,6 +10,7 @@ export default defineConfig({
     sitemap(),
   ],
   vite: {
+    // @ts-ignore — type mismatch between @tailwindcss/vite (Vite 8) and Astro's bundled Vite version
     plugins: [tailwindcss()],
   },
 });
